@@ -3,10 +3,10 @@
 
 # In[1]:
 
-
-get_ipython().run_line_magic('load_ext', 'autoreload')
-get_ipython().run_line_magic('autoreload', '2')
-get_ipython().run_line_magic('pylab', 'inline')
+#
+# get_ipython().run_line_magic('load_ext', 'autoreload')
+# get_ipython().run_line_magic('autoreload', '2')
+# get_ipython().run_line_magic('pylab', 'inline')
 
 import seaborn as sns
 sns.set_context('poster')
