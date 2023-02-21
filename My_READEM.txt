@@ -3,5 +3,39 @@
 
 Add Arnie location to your python path in your .bashrc
 
-export PYTHONPATH=$PYTHONPATH:/data/home/chenjiayang/projects/arnie
+export PYTHONPATH=$PYTHONPATH:/data/home/chenjiayang/projects/
 export ARNIEFILE="/data/home/chenjiayang/projects/arnie/my_arnie_file.txt"
+
+
+export PYTHONPATH=$PYTHONPATH:/data/home/chenjiayang/projects/EternaBench
+export ETERNABENCH_PATH=/data/home/chenjiayang/projects/EternaBench
+
+
+source ~/.bashrc
+
+
+
+conda activate Eterna
+
+pip install pandarallel
+pip install seaborn
+
+pip install tqdm
+
+conda create -n Eterna python=3.5
+安装RDATKit
+pip install numpy==1.14.2
+pip install scipy==1.0.1
+pip install xlrd==1.1.0
+pip install xlwt==1.3.0
+
+python setup.py install
+
+
+RDTKit
+https://github.com/HWaymentSteele/RDATKit/tree/py3_refactoring
+重构为python3，原本是python2
+
+/data/home/chenjiayang/projects/RNA/RNAstructure
+/data/home/chenjiayang/projects/RNA/ViennaRNA
+/data/home/chenjiayang/projects/RNA/Packages/VARNAv3-93.jar

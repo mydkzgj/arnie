@@ -12,7 +12,7 @@ rnastructure: /path/to/RNAstructure/exe
 #vienna_2: /usr/local/bin
 
 # for path to a vienna build:
-#vienna_2: /path/to/ViennaRNA-2.4.10/src/bin
+vienna_2: /data/home/chenjiayang/projects/RNA/ViennaRNA/bin
 #vienna_1: /path/to/ViennaRNA-1.8.5/bin
 #nupack: /path/to/nupack3.2.2/build/bin
 
