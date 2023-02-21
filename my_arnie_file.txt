@@ -3,10 +3,10 @@
 # NB: .gitignore file ignores *.arnie files. Name it as such if you don't want your local path file 
 # included with your git repo.
 
-rnastructure: /path/to/RNAstructure/exe
+rnastructure: /data/home/chenjiayang/projects/RNA/RNAstructure/exe
 #rnasoft: /path/to/MultiRNAFold
-#contrafold_2: /path/to/contrafold-se/src
-#eternafold: /path/to/eternafold/src/
+contrafold: /data/home/chenjiayang/projects/RNA/contrafold/src
+eternafold: /data/home/chenjiayang/projects/RNA/EternaFold/src
 
 # for a Mac installed binary:
 #vienna_2: /usr/local/bin
