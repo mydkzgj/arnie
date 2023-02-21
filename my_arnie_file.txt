@@ -5,7 +5,7 @@
 
 rnastructure: /data/home/chenjiayang/projects/RNA/RNAstructure/exe
 #rnasoft: /path/to/MultiRNAFold
-contrafold: /data/home/chenjiayang/projects/RNA/contrafold/src
+contrafold_1: /data/home/chenjiayang/projects/RNA/contrafold/src
 eternafold: /data/home/chenjiayang/projects/RNA/EternaFold/src
 
 # for a Mac installed binary:
