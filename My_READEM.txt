@@ -1,0 +1,7 @@
+1.creat my_arnie_file
+
+
+Add Arnie location to your python path in your .bashrc
+
+export PYTHONPATH=$PYTHONPATH:/data/home/chenjiayang/projects/arnie
+export ARNIEFILE="/data/home/chenjiayang/projects/arnie/my_arnie_file.txt"
