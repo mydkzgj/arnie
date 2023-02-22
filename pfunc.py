@@ -126,8 +126,15 @@ def pfunc(seq, package='vienna_2', T=37,
             elif 'eternafold' in package_locs.keys() and param_file is not None:
                     Z, tmp_file = pfunc_contrafold_(seq, T=T, constraint=constraint, 
                         bpps=bpps, param_file=param_file, DIRLOC= package_locs['eternafold'], 
-                        probing_kws=probing_kws, probing_signal = probing_signal, return_free_energy=return_free_energy, DEBUG=DEBUG)                
+                        probing_kws=probing_kws, probing_signal = probing_signal, return_free_energy=return_free_energy, DEBUG=DEBUG)
 
+    elif pkg == "rna-fm-resnet":
+        Z, tmp_file = pfunc_rnastructure_(seq, version=version, T=T, coaxial=coaxial,
+                                          constraint=constraint, bpps=bpps, return_free_energy=return_free_energy,
+                                          DEBUG=DEBUG)
+        print(Z)
+        print(tmp_file)
+        raise Exception("##############")
     else:
         raise ValueError('package %s not understood.' % package)
 
