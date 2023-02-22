@@ -132,9 +132,8 @@ def pfunc(seq, package='vienna_2', T=37,
         Z, tmp_file = pfunc_rnastructure_(seq, version=version, T=T, coaxial=coaxial,
                                           constraint=constraint, bpps=bpps, return_free_energy=return_free_energy,
                                           DEBUG=DEBUG)
-        print(Z)
-        print(tmp_file)
-        raise Exception("##############")
+        # Z = 0
+        # tmp_file = /tmp/tqbyzn.pfs
     else:
         raise ValueError('package %s not understood.' % package)
 
