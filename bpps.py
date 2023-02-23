@@ -88,9 +88,10 @@ def bpps(sequence, package='vienna', constraint=None, pseudo=False,
 
 def bpps_rnafm_resnet_(sequence, tmp_file,):
     # wrap algorithm, return calculations
-    print(sequence)
-    print(tmp_file)
-    raise Exception("HHHHHHHHHHHHHHHHH")
+    bp_array = np.load(tmp_file)
+    #print(sequence)
+    #print(tmp_file)
+    #raise Exception("HHHHHHHHHHHHHHHHH")
 
 
     return bp_array  # bp_array is a symmetric matrix of probabilities p(i:j) as a numpy array
