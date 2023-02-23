@@ -5,12 +5,6 @@ import numpy as np
 from .utils import *
 from .pfunc import pfunc
 
-# RNA-FM
-import fm
-model, alphabet = fm.downstream.build_rnafm_resnet(type="ss") #, model_location=path)
-batch_converter = alphabet.get_batch_converter()
-model.eval()
-
 # load package locations from yaml file, watch! global dict
 package_locs = load_package_locations()
 
