@@ -16,7 +16,8 @@ vienna_2: /data/home/chenjiayang/projects/RNA/ViennaRNA/bin
 #vienna_1: /path/to/ViennaRNA-1.8.5/bin
 #nupack: /path/to/nupack3.2.2/build/bin
 
-rna-fm-resnet: /data/home/chenjiayang/projects/RNA-FM/redevelop
+rna-fm-resnet: /data/home/chenjiayang/projects/RNA-FM/tutorials/secondary-structure-prediction/dist/Secondary-Structure-Prediction-arnie/
+#/data/home/chenjiayang/projects/RNA-FM/redevelop
 
 #TMP: location for tmp files for packages. Update to where you want your tmp files stored.
 TMP: /tmp

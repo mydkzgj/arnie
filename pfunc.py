@@ -129,9 +129,8 @@ def pfunc(seq, package='vienna_2', T=37,
                         probing_kws=probing_kws, probing_signal = probing_signal, return_free_energy=return_free_energy, DEBUG=DEBUG)
 
     elif pkg == "rna-fm-resnet":
-        Z, tmp_file = pfunc_rnastructure_(seq, version=version, T=T, coaxial=coaxial,
-                                          constraint=constraint, bpps=bpps, return_free_energy=return_free_energy,
-                                          DEBUG=DEBUG)
+        Z, tmp_file = pfunc_rnafm_resnet_(seq, )
+        # map to seq
         # Z = 0
         # tmp_file = /tmp/tqbyzn.pfs
     else:
@@ -147,6 +146,13 @@ def pfunc(seq, package='vienna_2', T=37,
             except:
                 pass
         return Z
+
+
+def pfunc_rnafm_resnet_(seq):
+    DIR = package_locs['rna-fm-resnet']
+    cmd = "{}/Secondary-Structure-Prediction-arnie --seq={} --save_dir={}".format(DIR, seq, "/data/tmp-cjy/")
+    os.system(cmd)
+    return 0, "/data/tmp-cjy/temp.npy"
 
 def pfunc_vienna_(seq, T=37, version='2', constraint=None, motif=None, param_file=None,
                 dangles=True, bpps=False, reweight=None, return_free_energy=False, DEBUG=False, probing_signal=None, shapeMethod='W', probing_kws=None):
