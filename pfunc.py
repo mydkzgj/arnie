@@ -156,8 +156,13 @@ def pfunc_rnafm_resnet_(seq):
 
     #os.system(cmd)
 
+    print("##############{}".format(tmp_save_name))
     p = sp.Popen(cmd, stdout=sp.PIPE, stderr=sp.PIPE)
     stdout, stderr = p.communicate()
+    print('stdout')
+    print(stdout)
+    print('stderr')
+    print(stderr)
 
     return 0, os.path.join(save_dir, tmp_save_name + ".npy")
 
