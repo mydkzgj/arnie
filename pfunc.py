@@ -154,7 +154,7 @@ def pfunc_rnafm_resnet_(seq):
     tmp_save_name = local_rand_filename(6)
     cmd = "{}/Secondary-Structure-Prediction-arnie --seq={} --save_dir={} --save_name={}".format(DIR, seq, save_dir, tmp_save_name)
 
-    os.system(cmd)
+    #os.system(cmd)
 
     p = sp.Popen(cmd, stdout=sp.PIPE, stderr=sp.PIPE)
     stdout, stderr = p.communicate()
