@@ -178,22 +178,22 @@ def pfunc_rnafm_resnet_(seq):
 
     global rna_fm_resnet
 
-    print(seq)
+    #print(seq)
 
     _ = rna_fm_resnet.sendline(seq)
     try:
         while (True):
             time.sleep(0.001)
-            print("sleep")
+            #print("sleep")
             output = rna_fm_resnet.read_nonblocking(10000, timeout=10)
             finish_flag = output.splitlines()[-1]
-            print(output)
-            print(finish_flag)
+            #print(output)
+            #print(finish_flag)
             if finish_flag == b"Input:":
-                print("break")
+                #print("break")
                 break
     except:
-        print("hhhh")
+        print("time out")
         raise Exception()
         # rna_fm_resnet.terminate()
         # rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --save_dir={}".format(
@@ -209,7 +209,6 @@ def pfunc_rnafm_resnet_(seq):
         #     if finish_flag == "Input:":
         #         break
 
-    print("nihao")
     #raise Exception
 
     return 0, os.path.join(save_dir, "temp.npy")
