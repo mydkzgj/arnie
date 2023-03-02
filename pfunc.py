@@ -6,15 +6,18 @@ from .utils import *
 import pexpect
 import time
 
-# rna-fm
-rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --seq={} --save_dir={} --save_name={}".format(package_locs['rna-fm-resnet'], "/data/tmp-cjy/",)
-rna_fm_resnet = pexpect.spawn(rna_fm_cmd)
 
-time.sleep(10)
 
 
 # load package locations from yaml file, watch! global dict
 package_locs = load_package_locations()
+
+
+# rna-fm  cjy
+rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --save_dir={} --save_name={}".format(package_locs['rna-fm-resnet'], "/data/tmp-cjy/",)
+rna_fm_resnet = pexpect.spawn(rna_fm_cmd)
+
+time.sleep(10)
 
 def pfunc(seq, package='vienna_2', T=37,
     constraint=None, motif=None, linear=False,
