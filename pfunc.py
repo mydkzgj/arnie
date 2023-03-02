@@ -190,6 +190,7 @@ def pfunc_rnafm_resnet_(seq):
             print(output)
             print(finish_flag)
             if finish_flag == "Input:":
+                print("break")
                 break
     except:
         print("hhhh")
@@ -208,7 +209,7 @@ def pfunc_rnafm_resnet_(seq):
         #     if finish_flag == "Input:":
         #         break
 
-
+    print("nihao")
     #raise Exception
 
     return 0, os.path.join(save_dir, "temp.npy")
