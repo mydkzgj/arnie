@@ -14,6 +14,7 @@ package_locs = load_package_locations()
 
 
 # rna-fm  cjy
+global rna_fm_resnet
 rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --save_dir={}".format(package_locs['rna-fm-resnet'], "/data/tmp-cjy/",)
 rna_fm_resnet = pexpect.spawn(rna_fm_cmd)
 
@@ -174,6 +175,8 @@ def pfunc_rnafm_resnet_(seq):
     # print(stdout)
     # print('stderr')
     # print(stderr)
+
+    global rna_fm_resnet
 
     _ = rna_fm_resnet.sendline(seq)
     try:
