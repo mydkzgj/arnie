@@ -3,6 +3,11 @@ import subprocess as sp
 import random, string
 import numpy as np
 from .utils import *
+import pexpect
+
+# rna-fm
+rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --seq={} --save_dir={} --save_name={}".format(package_locs['rna-fm-resnet'], "/data/tmp-cjy/",)
+rna_fm_resnet = pexpect.spawn(rna_fm_cmd)
 
 
 # load package locations from yaml file, watch! global dict
@@ -155,14 +160,25 @@ def pfunc_rnafm_resnet_(seq):
     cmd = "{}/Secondary-Structure-Prediction-arnie --seq={} --save_dir={} --save_name={}".format(DIR, seq, save_dir, tmp_save_name)
     #os.system(cmd)
 
-    cmd = ["{}/Secondary-Structure-Prediction-arnie".format(DIR), "--seq="+seq, "--save_dir="+save_dir, "--save_name="+tmp_save_name]
-    print("##############{}".format(tmp_save_name))
-    p = sp.Popen(cmd, stdout=sp.PIPE, stderr=sp.PIPE)
-    stdout, stderr = p.communicate()
-    print('stdout')
-    print(stdout)
-    print('stderr')
-    print(stderr)
+    # cmd = ["{}/Secondary-Structure-Prediction-arnie".format(DIR), "--seq="+seq, "--save_dir="+save_dir, "--save_name="+tmp_save_name]
+    # print("##############{}".format(tmp_save_name))
+    # p = sp.Popen(cmd, stdout=sp.PIPE, stderr=sp.PIPE)
+    # stdout, stderr = p.communicate()
+    # print('stdout')
+    # print(stdout)
+    # print('stderr')
+    # print(stderr)
+
+    _ = rna_fm_resnet.sendline(seq)
+    while(True):
+        time.sleep(0.01)
+        output = rna_fm_resnet.read_nonblocking(10000, timeout=1)
+        finish_flag = output.splitlines()[-1]
+        print(output)
+        if finish_flag == "Input:":
+            break
+
+    raise Exception
 
     return 0, os.path.join(save_dir, tmp_save_name + ".npy")
 
