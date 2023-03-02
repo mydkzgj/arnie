@@ -178,29 +178,34 @@ def pfunc_rnafm_resnet_(seq):
 
     global rna_fm_resnet
 
+    print(seq)
+
     _ = rna_fm_resnet.sendline(seq)
     try:
         while (True):
             time.sleep(0.001)
+            print("sleep")
             output = rna_fm_resnet.read_nonblocking(10000, timeout=10)
             finish_flag = output.splitlines()[-1]
-            # print(output)
+            print(output)
             if finish_flag == "Input:":
                 break
     except:
-        rna_fm_resnet.terminate()
-        rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --save_dir={}".format(
-            package_locs['rna-fm-resnet'], "/data/tmp-cjy/", )
-        rna_fm_resnet = pexpect.spawn(rna_fm_cmd)
-
-        time.sleep(10)
-        while (True):
-            time.sleep(0.001)
-            output = rna_fm_resnet.read_nonblocking(10000, timeout=1)
-            finish_flag = output.splitlines()[-1]
-            # print(output)
-            if finish_flag == "Input:":
-                break
+        print("hhhh")
+        raise Exception()
+        # rna_fm_resnet.terminate()
+        # rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --save_dir={}".format(
+        #     package_locs['rna-fm-resnet'], "/data/tmp-cjy/", )
+        # rna_fm_resnet = pexpect.spawn(rna_fm_cmd)
+        #
+        # time.sleep(10)
+        # while (True):
+        #     time.sleep(0.001)
+        #     output = rna_fm_resnet.read_nonblocking(10000, timeout=1)
+        #     finish_flag = output.splitlines()[-1]
+        #     # print(output)
+        #     if finish_flag == "Input:":
+        #         break
 
 
     #raise Exception
