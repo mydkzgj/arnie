@@ -182,7 +182,7 @@ def pfunc_rnafm_resnet_(seq):
     try:
         while (True):
             time.sleep(0.001)
-            output = rna_fm_resnet.read_nonblocking(10000, timeout=1)
+            output = rna_fm_resnet.read_nonblocking(10000, timeout=10)
             finish_flag = output.splitlines()[-1]
             # print(output)
             if finish_flag == "Input:":
