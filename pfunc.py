@@ -188,6 +188,7 @@ def pfunc_rnafm_resnet_(seq):
             output = rna_fm_resnet.read_nonblocking(10000, timeout=10)
             finish_flag = output.splitlines()[-1]
             print(output)
+            print(finish_flag)
             if finish_flag == "Input:":
                 break
     except:
