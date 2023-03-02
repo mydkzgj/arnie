@@ -189,7 +189,7 @@ def pfunc_rnafm_resnet_(seq):
             finish_flag = output.splitlines()[-1]
             print(output)
             print(finish_flag)
-            if finish_flag == "Input:":
+            if finish_flag == b"Input:":
                 print("break")
                 break
     except:
