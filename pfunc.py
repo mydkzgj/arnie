@@ -177,10 +177,10 @@ def pfunc_rnafm_resnet_(seq):
 
     _ = rna_fm_resnet.sendline(seq)
     while(True):
-        time.sleep(0.01)
+        time.sleep(0.001)
         output = rna_fm_resnet.read_nonblocking(10000, timeout=1)
         finish_flag = output.splitlines()[-1]
-        print(output)
+        #print(output)
         if finish_flag == "Input:":
             break
 
