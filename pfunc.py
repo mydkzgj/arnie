@@ -188,6 +188,7 @@ def pfunc_rnafm_resnet_(seq):
             if finish_flag == "Input:":
                 break
     except:
+        rna_fm_resnet.terminate()
         rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --save_dir={}".format(
             package_locs['rna-fm-resnet'], "/data/tmp-cjy/", )
         rna_fm_resnet = pexpect.spawn(rna_fm_cmd)
