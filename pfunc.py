@@ -163,7 +163,7 @@ def pfunc_rnafm_resnet_(seq):
     DIR = package_locs['rna-fm-resnet']
     save_dir = "/data/tmp-cjy/"
     tmp_save_name = local_rand_filename(6)
-    cmd = "{}/Secondary-Structure-Prediction-arnie --seq={} --save_dir={} --save_name={}".format(DIR, seq, save_dir, tmp_save_name)
+    #cmd = "{}/Secondary-Structure-Prediction-arnie --seq={} --save_dir={} --save_name={}".format(DIR, seq, save_dir, tmp_save_name)
     #os.system(cmd)
 
     # cmd = ["{}/Secondary-Structure-Prediction-arnie".format(DIR), "--seq="+seq, "--save_dir="+save_dir, "--save_name="+tmp_save_name]
@@ -184,9 +184,9 @@ def pfunc_rnafm_resnet_(seq):
         if finish_flag == "Input:":
             break
 
-    raise Exception
+    #raise Exception
 
-    return 0, os.path.join(save_dir, tmp_save_name + ".npy")
+    return 0, os.path.join(save_dir, "temp.npy")
 
 def pfunc_vienna_(seq, T=37, version='2', constraint=None, motif=None, param_file=None,
                 dangles=True, bpps=False, reweight=None, return_free_energy=False, DEBUG=False, probing_signal=None, shapeMethod='W', probing_kws=None):
