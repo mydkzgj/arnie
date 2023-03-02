@@ -4,10 +4,13 @@ import random, string
 import numpy as np
 from .utils import *
 import pexpect
+import time
 
 # rna-fm
 rna_fm_cmd = "{}/Secondary-Structure-Prediction-arnie-interaction --seq={} --save_dir={} --save_name={}".format(package_locs['rna-fm-resnet'], "/data/tmp-cjy/",)
 rna_fm_resnet = pexpect.spawn(rna_fm_cmd)
+
+time.sleep(10)
 
 
 # load package locations from yaml file, watch! global dict
